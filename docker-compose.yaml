@@ -9,7 +9,7 @@ services:
     networks:
     - ansh
     volumes:
-    - database:/var/lib/mysql
+    - database:/var/lib/database
     container_name: database
   
 #docker run -d --name backend --network ansh backend:1.0.0 sleep 5
@@ -18,7 +18,7 @@ services:
     networks:
     - ansh
     container_name: backend
-    command: sh -c "sleep 5 && node /opt/backend/index.js"
+    command: sh -c "sleep 10 && node /opt/backend/index.js"
     depends_on:
     - database
 
